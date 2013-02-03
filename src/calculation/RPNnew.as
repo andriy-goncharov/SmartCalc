@@ -6,7 +6,7 @@ package calculation
 	{
 		private var steck:Array;
 		private var resultRpn:Array
-		private var simbol:Object;
+		private var simbol:String;
 		private var strToParse:Array;
 		public function RPNnew()
 		{
@@ -30,10 +30,10 @@ package calculation
 			for (i = 0; i < lengthStr; i++) 
 			{			
 				simbol = strToParse.shift();
-				if (simbol as Array) 
-				{
-					getRezMathFunc(simbol);
-				}
+//				if (simbol as Array) 
+//				{
+//					getRezMathFunc(simbol);
+//				}
 				switch(simbol)
 				{
 					case '(':
