@@ -27,7 +27,7 @@ package
 			addChild(buttons);
 			
 			
-			/*
+			/* ......................
 			addChild(Button.CreatButton(4));
 			addChild(Button.CreatButton(2));
 			addChild(Button.CreatButton(6));
