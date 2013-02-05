@@ -144,7 +144,6 @@ package calculation
 	///////////////////////// мат функции /////////////////////////	
 		public function funcMathFunc(name:String):void
 		{
-			var mathEl:Array;
 			var nameModeAngles:String;
 			switch(inputModeAngles)
 			{
@@ -164,26 +163,25 @@ package calculation
 					break;
 				}
 			}
-			//////////для разбора ///////////////////////////
-			// передаем имя ф-и      само число      , режим углов
-			mathEl = [name,SmartCalc.display.digit,nameModeAngles] ///// элемент массива строки разбора сам массив
+			
+//			откусывать последнюю букву у ф-и
 			
 			/***
 			***придумать добавление сиволов Радиан Градус Град и разбор этого всего
 			****/
 			if (pushButtOper == BKT_MODE) 
 			{
-				SmartCalc.display.addTxtUppDisp(' '+name+'('+SmartCalc.display.digit+nameModeAngles+')');
-				arrayForCalc.push(mathEl);
+				SmartCalc.display.addTxtUppDisp(' '+name+nameModeAngles+'('+SmartCalc.display.digit+')');
+				arrayForCalc.push(name+nameModeAngles,'(',SmartCalc.display.digit,')');
 				SmartCalc.display.digit = MathFunction.createFunction(name,SmartCalc.display.digit,inputModeAngles);
-			}
-			else 
-			{
-				
-				SmartCalc.display.addTxtUppDisp(' '+name+'('+SmartCalc.display.digit+nameModeAngles+')');
-				arrayForCalc.push(mathEl);
-				SmartCalc.display.digit = MathFunction.createFunction(name,SmartCalc.display.digit,inputModeAngles);	
-			}
+			}      
+//			else
+//			{
+//				
+//				SmartCalc.display.addTxtUppDisp(' '+name+'('+SmartCalc.display.digit+nameModeAngles+')');
+//				arrayForCalc.push(mathEl);
+//				SmartCalc.display.digit = MathFunction.createFunction(name,SmartCalc.display.digit,inputModeAngles);	
+//			}
 			
 			
 			pushButtOper = BKT_MODE;
