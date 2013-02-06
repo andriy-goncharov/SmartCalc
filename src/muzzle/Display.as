@@ -101,7 +101,7 @@ package muzzle
 			{
 				txtDisplay.text = value;	
 			}
-			
+			fontSizeChange(value.length);
 		}
 		
 		public function addDigit(value:String):void
@@ -115,7 +115,7 @@ package muzzle
 				}else{
 					txtDisplay.appendText(value);	
 				}
-				fontSizeChange();
+				fontSizeChange(txtDisplay.text.length);
 			}
 		}
 		
@@ -126,7 +126,7 @@ package muzzle
 			{
 				this.digit = '0';
 			}
-			fontSizeChange();
+			fontSizeChange(txtDisplay.text.length);
 		}
 		
 		private function isCorrect():Boolean
@@ -145,7 +145,7 @@ package muzzle
 		private function ShowError():void
 		{
 			txtDisplay.text = "ERROR";
-			fontSizeChange();
+			fontSizeChange(txtDisplay.text.length);
 		}
 		
 		public function setFont(Num:int):void
@@ -180,21 +180,21 @@ package muzzle
 			}
 		}
 		
-		private function fontSizeChange():void //////////////////// поменять на что-то поумней....
+		private function fontSizeChange(colsimb:int):void //////////////////// поменять на что-то поумней....
 		{
-			if (txtDisplay.length < MAX_COL_SIMB_BIG) 
+			if (colsimb < MAX_COL_SIMB_BIG) 
 			{
 				format.size = 105;
 				txtDisplay.y = IDENT*5;
 				txtDisplay.setTextFormat(format);
 			}
-			else if ((txtDisplay.length >= MAX_COL_SIMB_BIG) && (txtDisplay.length < MAX_COL_SIMB_MIDL) ) 
+			else if ((colsimb >= MAX_COL_SIMB_BIG) && (colsimb < MAX_COL_SIMB_MIDL) ) 
 			{
 				format.size = 75;
 				txtDisplay.y = IDENT*8;
 				txtDisplay.setTextFormat(format);
 			}
-			else if (txtDisplay.length >= MAX_COL_SIMB_MIDL) 
+			else if (colsimb >= MAX_COL_SIMB_MIDL) 
 			{
 				format.size = 55;
 				txtDisplay.y = IDENT*10;

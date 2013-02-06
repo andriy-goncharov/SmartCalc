@@ -166,10 +166,7 @@ package calculation
 			
 //			откусывать последнюю букву у ф-и
 			
-			/***
-			***придумать добавление сиволов Радиан Градус Град и разбор этого всего
-			****/
-			if (pushButtOper == BKT_MODE) 
+			if (pushButtOper != BKT_MODE) 
 			{
 				SmartCalc.display.addTxtUppDisp(' '+name+nameModeAngles+'('+SmartCalc.display.digit+')');
 				arrayForCalc.push(name+nameModeAngles,'(',SmartCalc.display.digit,')');
